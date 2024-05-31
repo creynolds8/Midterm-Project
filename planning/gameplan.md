@@ -7,6 +7,19 @@
 
 ### CSS
 
-* header/nav bar
+* header / nav bar
 * default page
 * create / edit pages
+
+### ROUTES
+
+* GET/accounts
+* GET/account/:id
+* POST/accounts
+* POST/account/:id
+* POST/account/:id/delete (stretch)
+
+### JAVASCRIPT
+
+* functions
+  * create new account
