@@ -23,3 +23,30 @@
 
 * functions
   * create new account
+  * update account
+  * Random password generator
+  * copy text 
+  * filter function for catagories 
+  * get all accounts (to display on main page)
+
+
+### Database 
+* add tables 
+* generate table inputs 
+* make queries to be used in functions
+   - get accounts * for organization id or name 
+   - get account * for organization where catergory is "something"
+
+* generate fake data 
+
+
+
+### Things we still need to talk about 
+* What the main page will look like when no one is signed in/ make landing page?
+* what type of cookies we want to use and any other middleware
+* colour scheme and other css choices  
+* how we want to divide the work 
+* we should go through the file layout together and create files that we think we will need
+* workflow 
+
+
