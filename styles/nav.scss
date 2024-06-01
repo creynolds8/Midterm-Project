@@ -1,8 +1,9 @@
 nav {
   position: fixed;
   top: 0;
-  left: 0;
+  z-index: 100;
   padding: 1rem;
+  height: 120px;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -29,7 +30,7 @@ nav {
 
 .app-logo {
   margin-right: 1rem;
-  width: 8vw;
+  width: 6rem;
   background-color: azure;
   border-radius: 3rem;
 }
