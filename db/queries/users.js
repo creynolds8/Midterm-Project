@@ -32,6 +32,26 @@ const account = {
   categoryId: 12
 };
 
-console.log("addAccount", addAccount(account));
+addAccount(account);
 
-module.exports = { getUsers, addAccount};
+const organizationName = function(userId) {
+  const queryStr = `
+  SELECT organizations.name AS organization_name
+  FROM users
+  JOIN organizations ON organizations.id = organization_id
+  WHERE users.id = $1;
+    `;
+  const queryArgs = [userId];
+  return db.query(queryStr, queryArgs)
+    .then((results) => {
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+
+};
+
+organizationName(3);
+
+module.exports = { getUsers, addAccount, organizationName};
