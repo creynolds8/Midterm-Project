@@ -1,6 +1,6 @@
 UPDATE accounts
 SET username = 'Mary@gmail.com',
-password = 'password',
+password = '',
 website_name = 'amazon',
 website_url = 'https://www.amazon.ca',
 category_id = 12,
