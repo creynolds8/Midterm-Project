@@ -23,12 +23,15 @@
 ### JAVASCRIPT
 
 * functions
+  * get organization 
   * create new account
   * update account
-  * Random password generator
-  * copy text 
   * filter function for catagories 
   * get all accounts (to display on main page)
+
+  * Random password generator
+  * copy text 
+
 
 
 ### Database 
