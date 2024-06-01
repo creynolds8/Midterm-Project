@@ -48,5 +48,3 @@
 * how we want to divide the work 
 * we should go through the file layout together and create files that we think we will need
 * workflow 
-
-
