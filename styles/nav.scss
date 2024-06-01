@@ -14,5 +14,16 @@
 }
 
 .app-logo {
+  padding-right: 1rem;
   width: 10vw;
+}
+
+.log-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.log-button button {
+  margin-left: 1rem;
 }
