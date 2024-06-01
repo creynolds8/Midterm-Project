@@ -1,0 +1,15 @@
+INSERT INTO categories (name) VALUES ('Social Media');
+INSERT INTO categories (name) VALUES ('Financial');
+INSERT INTO categories (name) VALUES ('Email');
+INSERT INTO categories (name) VALUES ('Cloud Storage');
+INSERT INTO categories (name) VALUES ('Communication');
+INSERT INTO categories (name) VALUES ('Project Management');
+INSERT INTO categories (name) VALUES ('Collaboration');
+INSERT INTO categories (name) VALUES ('Customer Relationship Management (CRM)');
+INSERT INTO categories (name) VALUES ('HR & Recruitment');
+INSERT INTO categories (name) VALUES ('Design & Development');
+INSERT INTO categories (name) VALUES ('Analytics & Reporting');
+INSERT INTO categories (name) VALUES ('Product/Stock Management');
+INSERT INTO categories (name) VALUES ('Entertainment');
+INSERT INTO categories (name) VALUES ('Utilities');
+INSERT INTO categories (name) VALUES ('Security');
