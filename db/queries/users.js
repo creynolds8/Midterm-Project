@@ -23,17 +23,6 @@ const addAccount = function(account) {
     });
 };
 
-const account = {
-  username: 'bobby!123',
-  password: 'password1234',
-  websiteName: 'amazon',
-  websiteUrl: 'https://www.amazon.ca',
-  organizationId: 2,
-  categoryId: 12
-};
-
-addAccount(account);
-
 const organizationName = function(userId) {
   const queryStr = `
   SELECT organizations.name AS organization_name
@@ -52,6 +41,5 @@ const organizationName = function(userId) {
 
 };
 
-organizationName(3);
 
 module.exports = { getUsers, addAccount, organizationName};
