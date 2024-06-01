@@ -3,18 +3,18 @@
     <div class="navbar">
       <div class="app-info">
         <img class="app-logo" src="https://www.talk-english.co.uk/wp-content/uploads/2018/05/Padlock-symbol.png">
-        <a href="/accounts">PASSWORD KEEPER</a>
+        <p class="app-name">PASSWORD KEEPER</p>
       </div>
 
-      <% if (true) { %>
-        ORGANIZATION NAME
+      <% if (!true) { %>
+        <h3>ORGANIZATION NAME</h3>
       <% } %>
 
-      <% if (true) { %>
+      <% if (!true) { %>
         <div class="log-button">
-        </div>
           Logged in as: dev
           <button class="nav-button">Logout</button>
+        </div>
           <% } else { %>
             <div class="log-button">
               <button class="nav-button">Login</button>
