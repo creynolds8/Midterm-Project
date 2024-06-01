@@ -23,6 +23,10 @@
 ### JAVASCRIPT
 
 * functions
+  * get organization 
+  * create new account
+  * update account
+  * filter function for catagories 
   * Random password generator
   * copy text 
 
@@ -34,6 +38,10 @@
     * get user by id then get their organization id then get all accounts for that organization to render for user
   * get user by id 
     * query database for user with id and return user info
+
+  * Random password generator
+  * copy text 
+
 
 
 ### Database 
