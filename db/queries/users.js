@@ -13,7 +13,7 @@ const addAccount = function(account) {
     VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *;
     `;
-  const queryArgs = [account.username, account.password, account.website_name, account.website_url, account.organization_id, account.category_id];
+  const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, account.organizationId, account.categoryId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
@@ -23,6 +23,15 @@ const addAccount = function(account) {
     });
 };
 
+const account = {
+  username: 'bobby!123',
+  password: 'password1234',
+  websiteName: 'amazon',
+  websiteUrl: 'https://www.amazon.ca',
+  organizationId: 2,
+  categoryId: 12
+};
 
+console.log("addAccount", addAccount(account));
 
 module.exports = { getUsers };
