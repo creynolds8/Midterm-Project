@@ -3,6 +3,7 @@
 * partial file for header/nav bar
 * default page
 * create new account
+  - should form also have a menu to choose what category it should be in 
 * edit account info
 
 ### CSS
@@ -48,3 +49,4 @@
 * how we want to divide the work 
 * we should go through the file layout together and create files that we think we will need
 * workflow 
+* think more about how the categories are going to work 

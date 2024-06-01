@@ -5,5 +5,6 @@ CREATE TABLE accounts (
   password VARCHAR(255) NOT NULL,
   website_name VARCHAR(255) NOT NULL,
   website_url VARCHAR(255),
-  organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE
+  organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
