@@ -7,15 +7,15 @@ const getUsers = () => {
     });
 };
 
-//// fix the org id issue
+
 // takes in the information from the create account form as an object and updates db
-const addAccount = function(account) {
+const addAccount = function(account, organizationId) {
   const queryStr = `INSERT INTO accounts (
     username, password, website_name, website_url, organization_id, category_id)
     VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *;
     `;
-  const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, account.organizationId, account.categoryId];
+  const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, organizationId, account.categoryId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
@@ -24,6 +24,8 @@ const addAccount = function(account) {
       console.log(err.message);
     });
 };
+
+
 
 
 const organizationName = function(userId) {
@@ -95,14 +97,15 @@ module.exports = { getUsers, addAccount, organizationName, organizationId, updat
 
 
 const account = {
-  username: 'Ally123',
-  password: 'Password!',
+  username: 'billybob',
+  password: 'popcorn',
   websiteName: 'amazon',
   websiteUrl: 'https://www.amazon.ca',
   categoryId: 12
 };
 
 updateAccount(account, 1);
+addAccount(account, 2);
 
 
 
