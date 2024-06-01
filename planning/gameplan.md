@@ -29,6 +29,7 @@
   * copy text 
   * filter function for catagories 
   * get all accounts (to display on main page)
+    * get user by id then get their organization id then get all accounts for that organization to render for user
 
 
 ### Database 
