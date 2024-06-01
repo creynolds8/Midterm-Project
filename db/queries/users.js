@@ -34,4 +34,4 @@ const account = {
 
 console.log("addAccount", addAccount(account));
 
-module.exports = { getUsers };
+module.exports = { getUsers, addAccount};
