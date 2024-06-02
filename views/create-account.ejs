@@ -20,9 +20,8 @@
   <header><%- include('partials/_navbar') %></header>
 <body>
   <div class="outer-div">
+    <form id="password-generator">
     <div class="password-selector">
-      <form action="">
-
         <label for="length" >Select Password Length</label>
         <select id="length" name="password-length">
           <option value="select" selected>Choose a length</option>
@@ -40,27 +39,27 @@
           <option value="19">19</option>
           <option value="20">20</option>
         </select>
-        <div>
-          <input type="checkbox" name="lower-case" class="checkbox">
+        <div class="password-checkbox">
+          <input type="checkbox" id="lower-case" name="lower-case">
           <label for="lower-case"> Lowercase Letters</label>
         </div>
-        <div>
-          <input type="checkbox" name="upper-case" class="checkbox">
+        <div class="password-checkbox">
+          <input type="checkbox" id="upper-case" name="upper-case">
           <label for="upper-case"> Uppercase Letters</label>
         </div>
-        <div>
-          <input type="checkbox" name="numbers" class="checkbox">
+        <div class="password-checkbox">
+          <input type="checkbox" id="numbers" name="numbers">
           <label for="numbers"> Numbers</label>
         </div>
-        <div>
-          <input type="checkbox" name="special-chars" class="checkbox">
+        <div class="password-checkbox">
+          <input type="checkbox" id="special-chars" name="special-chars">
           <label for="special-chars"> Special Characters</label>
         </div>
         <button type="submit" class="password-create">GENERATE</button>
-      </form>
       </div>
+    </form>
+    <form action="">
       <div class="create-account-form">
-      <form action="">
 
         <h2>CREATE NEW ACCOUNT</h2>
         <div class="account-form">
@@ -73,8 +72,9 @@
           <input type="text">
         </div>
         <button class="create-account-button">CREATE</button>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+  <script src="/scripts/passwordForm.js"></script>
 </body>
 </html>
