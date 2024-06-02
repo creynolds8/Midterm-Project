@@ -7,12 +7,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log("form info", req.body);
 //once we get the login route working we need to
 //get the id from cookies not hard coded!!!
   addAccount(req.body, 1)
-    .then((orgId) => {
-      console.log("organization Id", orgId);
+    .then(() => {
       res.redirect('accounts');
     })
     .catch((error)=>{
