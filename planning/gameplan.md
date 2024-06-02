@@ -23,12 +23,25 @@
 ### JAVASCRIPT
 
 * functions
+  * get organization 
   * create new account
   * update account
+  * filter function for catagories 
   * Random password generator
   * copy text 
-  * filter function for catagories 
+
+* queries 
+  * filter function for catagories
+  * create new account
+  * update account
   * get all accounts (to display on main page)
+    * get user by id then get their organization id then get all accounts for that organization to render for user
+  * get user by id 
+    * query database for user with id and return user info
+
+  * Random password generator
+  * copy text 
+
 
 
 ### Database 
