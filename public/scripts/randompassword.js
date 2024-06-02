@@ -13,7 +13,4 @@ const generatePassword = function (length, lower, upper, special, number) {
   return password;
 }
 
-const length = 8;
-console.log(generatePassword(length, true, true, true, true));
-
 module.exports = { generatePassword };
