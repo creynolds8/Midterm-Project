@@ -88,7 +88,27 @@ const updateAccount = function(account, accountId) {
     });
 };
 
+const getCategories = function(organizationId) {
+  const queryStr = `
+  SELECT DISTINCT categories.name
+  FROM accounts
+  JOIN categories ON categories.id = category_id
+  JOIN organizations ON category_id = categories.id
+  JOIN users ON organizations.id = users.organization_id
+  WHERE users.organization_id = $1;
+    `;
+  const queryArgs = [organizationId];
+  return db.query(queryStr, queryArgs)
+    .then((results) => {
+      console.log(results.rows);
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
 
+getCategories(2);
 
 
 
@@ -96,16 +116,16 @@ const updateAccount = function(account, accountId) {
 module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount};
 
 
-const account = {
-  username: 'billybob',
-  password: 'popcorn',
-  websiteName: 'amazon',
-  websiteUrl: 'https://www.amazon.ca',
-  categoryId: 12
-};
+// const account = {
+//   username: 'billybob',
+//   password: 'popcorn',
+//   websiteName: 'amazon',
+//   websiteUrl: 'https://www.amazon.ca',
+//   categoryId: 12
+// };
 
-updateAccount(account, 1);
-addAccount(account, 2);
+// updateAccount(account, 1);
+// addAccount(account, 2);
 
 
 
