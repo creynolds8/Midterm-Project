@@ -22,9 +22,9 @@
     <div class="outer-div">
       <form id="password-generator">
         <div class="password-selector">
-          <label for="length">Select Password Length</label>
+          <label for="length">Select Password Parameters</label>
           <select id="length" name="password-length">
-            <option value="select" selected>Choose a length</option>
+            <option value="select" selected>-- Choose a length --</option>
             <option value="8">8</option>
             <option value="9">9</option>
             <option value="10">10</option>
@@ -89,6 +89,23 @@
                   id="password-input"
                   placeholder="TOP SECRET PASSWORD"
                 />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="category-selection">Select a Category: </label>
+              </td>
+              <td>
+                <select name="category-selection" id="category-selection">
+                  <option value="cat_id" selected>-- Website Type --</option>
+                  <option value="1">Social Media</option>
+                  <option value="2">Financial</option>
+                  <option value="3">Email</option>
+                  <option value="4">Cloud Storage</option>
+                  <option value="5">Project Management</option>
+                  <option value="6">Product Management</option>
+                  <option value="7">Entertainment</option>
+                  <option value="8">Security</option>
               </td>
             </tr>
           </table>
