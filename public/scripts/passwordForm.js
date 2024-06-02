@@ -20,4 +20,5 @@ document
       passwordOptions.numbers
     );
     console.log(password);
+    $('#password-input').val(password)
   });
