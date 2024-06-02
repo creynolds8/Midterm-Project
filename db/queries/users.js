@@ -56,7 +56,6 @@ const organizationId = function(userId) {
   const queryArgs = [userId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      console.log("org id", results.rows);
       return results.rows;
     })
     .catch((err) => {
@@ -80,7 +79,6 @@ const updateAccount = function(account, accountId) {
   const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, account.categoryId, accountId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      console.log(results.rows);
       return results.rows;
     })
     .catch((err) => {
@@ -88,6 +86,8 @@ const updateAccount = function(account, accountId) {
     });
 };
 
+
+//get all category names which have an account associated with it
 const getCategories = function(organizationId) {
   const queryStr = `
   SELECT DISTINCT categories.name
@@ -100,7 +100,6 @@ const getCategories = function(organizationId) {
   const queryArgs = [organizationId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      console.log(results.rows);
       return results.rows;
     })
     .catch((err) => {
@@ -108,12 +107,27 @@ const getCategories = function(organizationId) {
     });
 };
 
-getCategories(2);
+const allAccounts = function(organizationId) {
+  const queryStr = `
+  SELECT * FROM accounts
+  WHERE organization_id = $1;
+    `;
+  const queryArgs = [organizationId];
+  return db.query(queryStr, queryArgs)
+    .then((results) => {
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
 
 
 
 
-module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount};
+
+
+module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount, getCategories, allAccounts};
 
 
 // const account = {
@@ -126,6 +140,7 @@ module.exports = { getUsers, addAccount, organizationName, organizationId, updat
 
 // updateAccount(account, 1);
 // addAccount(account, 2);
+//getCategories(2);
 
 
 
