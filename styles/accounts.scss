@@ -1,0 +1,22 @@
+body {
+  background: slategray;
+}
+
+.outer-div {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid;
+}
+
+.categories-header {
+  padding: 0.5rem 1rem;
+  border-bottom: 4px solid;
+}
