@@ -1,5 +1,5 @@
 const generatePassword = function (length, lower, upper, special, number) {
-  const lowerCase = "abcdefhijklmnopqrstuvwxyz";
+  const lowerCase = "abcdefghijklmnopqrstuvwxyz";
   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const specialChar = "!@#$%^*()_+=";
   const num = "1234567890";
