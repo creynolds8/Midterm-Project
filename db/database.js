@@ -11,16 +11,16 @@ const getUsers = () => {
 // takes in the information from the create account form as an object and updates db
 const addAccount = function(account, userId) {
   const queryStr = `INSERT INTO accounts (
-    username, password, website_name, organization_id,)
+    username, password, website_name, organization_id)
     VALUES ($1, $2, $3, (SELECT organization_id
       FROM users
-      WHERE users.id = $4)
+      WHERE users.id = $4))
     RETURNING *;
     `;
-  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], organizationId,];
+  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], userId,];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      return results.rows;
+      return results.rows[0];
     })
     .catch((err) => {
       console.log(err.message);
