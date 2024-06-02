@@ -19,35 +19,14 @@ INSERT INTO accounts (username, password, website_name, website_url, organizatio
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('clouduser1', 'cloudpass123', 'Google Drive', 'https://drive.google.com/', 1, 4);
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('clouduser2', 'securecloud456', 'Dropbox', 'https://www.dropbox.com/', 1, 4);
 
--- Communication
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('commuser1', 'comm123pass', 'Slack', 'https://slack.com/', 1, 5);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('commuser2', 'securecomm789', 'Microsoft Teams', 'https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software', 1, 5);
-
 -- Project Management
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('projuser1', 'projpass123', 'Trello', 'https://trello.com/', 1, 6);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('projuser2', 'secureproj456', 'Asana', 'https://asana.com/', 1, 6);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('projuser1', 'projpass123', 'Trello', 'https://trello.com/', 1, 5);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('projuser2', 'secureproj456', 'Asana', 'https://asana.com/', 1, 5);
 
--- Collaboration
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('collabuser1', 'collabpass123', 'Google Workspace', 'https://workspace.google.com/', 2, 7);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('collabuser2', 'securecollab456', 'Microsoft Office 365', 'https://www.microsoft.com/en-us/microsoft-365/', 2, 7);
-
--- Customer Relationship Management (CRM)
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('crmuser1', 'crmpass123', 'Salesforce', 'https://www.salesforce.com/', 2, 8);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('crmuser2', 'securecrm456', 'HubSpot', 'https://www.hubspot.com/', 2, 8);
-
--- HR & Recruitment
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('hruser1', 'hrpass123', 'BambooHR', 'https://www.bamboohr.com/', 2, 9);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('hruser2', 'securehr456', 'Workday', 'https://www.workday.com/', 2, 9);
-
-
--- Product/Stock Management
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser1', 'prodpass123', 'Shopify', 'https://www.shopify.com/', 1, 12);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser2', 'secureprod456', 'BigCommerce', 'https://www.bigcommerce.com/', 1, 12);
+-- Product Management
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser1', 'prodpass123', 'Shopify', 'https://www.shopify.com/', 1, 6);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser2', 'secureprod456', 'BigCommerce', 'https://www.bigcommerce.com/', 1, 6);
 
 -- Entertainment
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('entuser1', 'entpass123', 'Netflix', 'https://www.netflix.com/', 1, 13);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('entuser2', 'secureent456', 'Spotify', 'https://www.spotify.com/', 1, 13);
-
--- Utilities
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('utiluser1', 'utilpass123', 'Google Maps', 'https://www.google.com/maps', 2, 14);
-INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('utiluser2', 'secureutil456', 'Dropbox Paper', 'https://paper.dropbox.com/', 2, 14);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('entuser1', 'entpass123', 'Netflix', 'https://www.netflix.com/', 1, 7);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('entuser2', 'secureent456', 'Spotify', 'https://www.spotify.com/', 1, 7);
