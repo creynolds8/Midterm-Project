@@ -87,8 +87,22 @@ const updateAccount = function(account, accountId) {
 };
 
 
+const getAllCategories = function() {
+  const queryStr = `
+  SELECT DISTINCT name
+  FROM categories
+    `;
+  return db.query(queryStr)
+    .then((results) => {
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
 //get all category names which have an account associated with it
-const getCategories = function(organizationId) {
+const getCategoriesByOrg = function(organizationId) {
   const queryStr = `
   SELECT DISTINCT categories.name
   FROM accounts
@@ -123,11 +137,7 @@ const allAccounts = function(organizationId) {
 };
 
 
-
-
-
-
-module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount, getCategories, allAccounts};
+module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts};
 
 
 // const account = {
