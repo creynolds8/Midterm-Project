@@ -53,3 +53,8 @@ article {
   border: none;
   border-radius: 0.5rem;
 }
+
+.account-button:hover {
+  box-shadow: 6px 6px 8px;
+  cursor: pointer;
+}
