@@ -1,4 +1,4 @@
-const generatePassword = function (length, lower, upper, special, number) {
+export const generatePassword = function (length, lower, upper, special, number) {
   const lowerCase = "abcdefghijklmnopqrstuvwxyz";
   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const specialChar = "!@#$%^*()_+=";
@@ -12,5 +12,3 @@ const generatePassword = function (length, lower, upper, special, number) {
   }
   return password;
 }
-
-module.exports = { generatePassword };
