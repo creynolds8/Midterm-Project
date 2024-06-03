@@ -7,7 +7,8 @@ router.get('/', (req, res) => {
   if (!userId) {
     return res.send({ message: "not logged in" });
   }
-  res.render('create-account');
+  const templateVars = { userId: req.session.userId };
+  res.render('create-account', templateVars);
 });
 
 router.post('/', (req, res) => {
