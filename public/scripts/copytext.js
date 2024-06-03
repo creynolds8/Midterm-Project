@@ -9,4 +9,4 @@ const copyText = function () {
   alert(`Copy to clipboard: {textUse.value}`)
 }
 
-copyText("text");
+copyText();
