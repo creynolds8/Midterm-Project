@@ -1,13 +1,15 @@
-SELECT accounts.*, categories.name
-FROM accounts JOIN categories ON categories.id = category_id
-WHERE category_id = 5;
+-- SELECT accounts.*, categories.name
+-- FROM accounts JOIN categories ON categories.id = category_id
+-- WHERE category_id = 5;
 
 
--- OR
+-- -- OR
 
-SELECT categories.name
+SELECT DISTINCT categories.name
 FROM accounts
-JOIN categories ON categories.id = category_id,
-JOIN organizations ON category_id = categories.id,
-JOIN uses ON categories.id = users.category_id
-WHERE users.organization_id;
+JOIN categories ON categories.id = category_id
+JOIN organizations ON category_id = categories.id
+JOIN users ON organizations.id = users.organization_id
+WHERE users.organization_id = 1;
+
+
