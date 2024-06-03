@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const cookieSession = require('cookie-session');
+
 
 
 router.get('/:id', (req, res) => {

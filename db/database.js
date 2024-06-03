@@ -177,7 +177,7 @@ const getAccountById = function(accountId) {
     });
 };
 
-const getAccountsByCategory = function(category_id, userId) {
+const getAccountsByCategory = function(categoryId, userId) {
   const queryStr = `
     SELECT DISTINCT accounts.*
   FROM accounts
@@ -188,7 +188,7 @@ const getAccountsByCategory = function(category_id, userId) {
     FROM users
     WHERE users.id = $2);
     `;
-  const queryArgs = [category_id, userId];
+  const queryArgs = [categoryId, userId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
