@@ -1,4 +1,4 @@
-const db = require('../connection');
+const db = require('./connection');
 
 const getUsers = () => {
   return db.query('SELECT * FROM users;')
@@ -9,21 +9,43 @@ const getUsers = () => {
 
 
 // takes in the information from the create account form as an object and updates db
-const addAccount = function(account, organizationId) {
+const addAccount = function(account, userId) {
   const queryStr = `INSERT INTO accounts (
-    username, password, website_name, website_url, organization_id, category_id)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    username, password, website_name, category_id, organization_id)
+    VALUES ($1, $2, $3, $4, (SELECT organization_id
+      FROM users
+      WHERE users.id = $5))
     RETURNING *;
     `;
-  const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, organizationId, account.categoryId];
+  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["category-selection"], userId,];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      return results.rows;
+      return results.rows[0];
     })
     .catch((err) => {
       console.log(err.message);
     });
 };
+
+
+//stretch version that takes a url
+// // takes in the information from the create account form as an object and updates db
+// const addAccount = function(account, organizationId) {
+//   const queryStr = `INSERT INTO accounts (
+//     username, password, website_name, website_url, organization_id, category_id)
+//     VALUES ($1, $2, $3, $4, $5, $6)
+//     RETURNING *;
+//     `;
+//   const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, organizationId, account.categoryId];
+//   return db.query(queryStr, queryArgs)
+//     .then((results) => {
+//       return results.rows;
+//     })
+//     .catch((err) => {
+//       console.log(err.message);
+//     });
+// };
+
 
 
 
@@ -121,12 +143,14 @@ const getCategoriesByOrg = function(organizationId) {
     });
 };
 
-const allAccounts = function(organizationId) {
+const allAccounts = function(userId) {
   const queryStr = `
   SELECT * FROM accounts
-  WHERE organization_id = $1;
+  WHERE organization_id = (SELECT organization_id
+  FROM users
+  WHERE users.id = 1);
     `;
-  const queryArgs = [organizationId];
+  const queryArgs = [userId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
