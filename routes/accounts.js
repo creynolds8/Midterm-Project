@@ -5,4 +5,8 @@ router.get('/', (req, res) => {
   res.render('accounts');
 });
 
+router.get('/:id', (req, res) => {
+  res.render('edit-account');
+});
+
 module.exports = router;
