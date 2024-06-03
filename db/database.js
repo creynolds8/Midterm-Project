@@ -11,13 +11,13 @@ const getUsers = () => {
 // takes in the information from the create account form as an object and updates db
 const addAccount = function(account, userId) {
   const queryStr = `INSERT INTO accounts (
-    username, password, website_name, organization_id)
-    VALUES ($1, $2, $3, (SELECT organization_id
+    username, password, website_name, category_id, organization_id)
+    VALUES ($1, $2, $3, $4, (SELECT organization_id
       FROM users
-      WHERE users.id = $4))
+      WHERE users.id = $5))
     RETURNING *;
     `;
-  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], userId,];
+  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["category-selection"], userId,];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows[0];
@@ -143,12 +143,14 @@ const getCategoriesByOrg = function(organizationId) {
     });
 };
 
-const allAccounts = function(organizationId) {
+const allAccounts = function(userId) {
   const queryStr = `
   SELECT * FROM accounts
-  WHERE organization_id = $1;
+  WHERE organization_id = (SELECT organization_id
+  FROM users
+  WHERE users.id = 1);
     `;
-  const queryArgs = [organizationId];
+  const queryArgs = [userId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
