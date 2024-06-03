@@ -12,14 +12,10 @@
   <link rel="stylesheet" href="/styles/accounts.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log("hello loaded")
-    });
-
-    </script>
+  <script
+  type="text/javascript"
+  src="/scripts/create-account-element.js"
+></script>
   <title>Accounts</title>
 </head>
 
@@ -51,7 +47,7 @@
         <button class="account-button">CREATE NEW ACCOUNT</button>
       </a>
     </span>
-    <div class="accounts">
+    <div id="accounts">
       <article>
         <p>website name</p>
         <p>username</p>

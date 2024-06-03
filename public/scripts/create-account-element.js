@@ -1,5 +1,3 @@
-// const { allAccounts } = require("../../db/database.js");
-
   const createAccountElement = function (account) {
     const newAccount = $(`
     <article>
@@ -17,14 +15,20 @@
   const renderAccounts = function (accounts) {
     for (const account of accounts) {
       console.log(account);
-      // const $account = createAccountElement(account);
-      // $(".accounts").prepend($account);
+      const $account = createAccountElement(account);
+      $("#accounts").prepend($account);
     }
   };
 
-  module.exports = { createAccountElement, renderAccounts };
+  const loadAccounts = function() {
+    $.get({
+      url: "http://localhost:8080/accounts/getaccounts",
+    }).then((res) => {
+      $("#accounts").empty();
+      renderAccounts(res);
+    });
+  };
 
-// document.addEventListener('DOMContentLoaded', function() {
-
-//   renderAccounts([{website_name: 'blank', username: 'asdfa', password:'aasdf'}])
-//   })
+  $(document).ready(function () {
+    loadAccounts()
+})
