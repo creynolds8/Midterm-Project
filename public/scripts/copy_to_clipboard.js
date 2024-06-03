@@ -2,11 +2,13 @@
 
 import { copyText } from "./copytext.js";
 
-document.getElementsByClassName("account-button")
-.addEventListener("submit", function (event) {
-  event.preventDefault();
-  console.log(copyText);
-  const copyToClipboard = copyText();
-  console.log(copyToClipboard);
-  $('#clipboard-text').val(copyToClipboard);
-});
+const accountButtons = document.getElementsByClassName("account-button"); // Assuming it's the first one
+console.log("Account button",accountButtons);
+for(let accountButton of accountButtons)  {
+  accountButton.addEventListener("click", function(event) {
+    console.log("click event triggered on account button");
+    copyText(); // This function now also handles showing feedback directly.
+  });
+
+}
+
