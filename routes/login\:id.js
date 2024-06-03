@@ -24,23 +24,4 @@ if (!userId) {
   return res.send({ message: "not logged in" });
 }
 
-//Login route
-app.post("/login", (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-  const userEmail = findEmail(email, users);
-  const userPassword = findPassword(email, users);
-  if (email === userEmail) {
-    if (bcrypt.compareSync(password, userPassword)) {
-      const userID = findUserID(email, users);
-      // Cookie for user ID
-      req.session.user_id = userID;
-      res.redirect("/urls");
-    } else {
-      res.status(403).send("Password is wrong");
-    }
-  } else {
-    res.status(403).send("User email is invalid. Register");
-  }
-});
 
