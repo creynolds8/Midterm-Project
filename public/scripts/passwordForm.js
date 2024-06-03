@@ -22,3 +22,4 @@ document
     console.log(password);
     $('#password-input').val(password)
   });
+
