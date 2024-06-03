@@ -150,7 +150,7 @@ const allAccounts = function(userId) {
   SELECT * FROM accounts
   WHERE organization_id = (SELECT organization_id
   FROM users
-  WHERE users.id = 1);
+  WHERE users.id = $1);
     `;
   const queryArgs = [userId];
   return db.query(queryStr, queryArgs)
