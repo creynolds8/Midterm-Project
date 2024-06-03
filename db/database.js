@@ -124,16 +124,18 @@ const getAllCategories = function() {
 };
 
 //get all category names which have an account associated with it
-const getCategoriesByOrg = function(organizationId) {
+const getCategoriesByOrg = function(userId) {
   const queryStr = `
   SELECT DISTINCT categories.name
   FROM accounts
   JOIN categories ON categories.id = category_id
   JOIN organizations ON category_id = categories.id
   JOIN users ON organizations.id = users.organization_id
-  WHERE users.organization_id = $1;
+  WHERE users.organization_id =(SELECT organization_id
+    FROM users
+    WHERE users.id = $1);
     `;
-  const queryArgs = [organizationId];
+  const queryArgs = [userId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
@@ -160,8 +162,44 @@ const allAccounts = function(userId) {
     });
 };
 
+const getAccountById = function(accountId) {
+  const queryStr = `
+  SELECT * FROM accounts
+  WHERE id = $1;
+    `;
+  const queryArgs = [accountId];
+  return db.query(queryStr, queryArgs)
+    .then((results) => {
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
 
-module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts};
+const getAccountsByCategory = function(category_id, userId) {
+  const queryStr = `
+    SELECT DISTINCT accounts.*
+  FROM accounts
+  JOIN categories ON categories.id = category_id
+  JOIN organizations ON category_id = categories.id
+  JOIN users ON organizations.id = users.organization_id
+  WHERE categories.id = $1 AND accounts.organization_id = (SELECT organization_id
+    FROM users
+    WHERE users.id = $2);
+    `;
+  const queryArgs = [category_id, userId];
+  return db.query(queryStr, queryArgs)
+    .then((results) => {
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+
+module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts, getAccountById, getAccountsByCategory};
 
 
 // const account = {
