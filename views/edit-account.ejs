@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit Account</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/nav.css" />
+    <link rel="stylesheet" href="/styles/create.css" />
+
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+  </head>
+
+  <header><%- include('partials/_navbar') %></header>
+  <body>
+    <div class="outer-div">
+      <form id="password-generator">
+        <div class="password-selector">
+          <label for="length">Select Password Parameters</label>
+          <select id="length" name="password-length">
+            <option value="false" selected>-- Choose a length --</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+          <div class="password-checkbox">
+            <input type="checkbox" id="lower-case" name="lower-case" />
+            <label for="lower-case"> Lowercase Letters</label>
+          </div>
+          <div class="password-checkbox">
+            <input type="checkbox" id="upper-case" name="upper-case" />
+            <label for="upper-case"> Uppercase Letters</label>
+          </div>
+          <div class="password-checkbox">
+            <input type="checkbox" id="numbers" name="numbers" />
+            <label for="numbers"> Numbers</label>
+          </div>
+          <div class="password-checkbox">
+            <input type="checkbox" id="special-chars" name="special-chars" />
+            <label for="special-chars"> Special Characters</label>
+          </div>
+          <button type="submit" class="password-create">GENERATE</button>
+        </div>
+      </form>
+      <form action="">
+        <div class="create-account-form">
+          <h2>EDIT YOUR ACCOUNT</h2>
+          <table>
+            <tr>
+              <td>
+                <label for="website-input">Input the Website Name: </label>
+              </td>
+              <td>
+                <input type="text" name="website-input" id="website-input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="username-input">Input your Username: </label>
+              </td>
+              <td>
+                <input type="text" name="username-input" id="username-input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="password-input">Input your Password: </label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="password-input"
+                  id="password-input"
+                  placeholder="TOP SECRET PASSWORD"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="category-selection">Select a Category: </label>
+              </td>
+              <td>
+                <select name="category-selection" id="category-selection">
+                  <option value="false" selected>-- Website Type --</option>
+                  <option value="1">Social Media</option>
+                  <option value="2">Financial</option>
+                  <option value="3">Email</option>
+                  <option value="4">Cloud Storage</option>
+                  <option value="5">Project Management</option>
+                  <option value="6">Product Management</option>
+                  <option value="7">Entertainment</option>
+                  <option value="8">Security</option>
+              </td>
+            </tr>
+          </table>
+                <button class="create-account-button">CREATE</button>
+        </div>
+      </form>
+    </div>
+    <script src="/scripts/passwordForm.js" type="module"></script>
+  </body>
+</html>
