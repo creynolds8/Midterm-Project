@@ -1,5 +1,5 @@
 // copy text function
-const copyText = function () {
+export const copyText = function () {
   let textUse = document.getElementById("myInput");
   textUse.select();
 
@@ -9,4 +9,5 @@ const copyText = function () {
   alert(`Copy to clipboard: {textUse.value}`)
 }
 
-copyText();
+
+
