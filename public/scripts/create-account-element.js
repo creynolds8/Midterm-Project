@@ -1,3 +1,5 @@
+const  { allAccounts } = require('../../db/database.js')
+
 const createAccountElement = function (account) {
   const newAccount = $(`
   <article>
@@ -18,5 +20,9 @@ const renderAccounts = function (accounts) {
     $(".accounts").prepend($account);
   }
 };
+
+const loadAccounts = function (usedId) {
+  allAccounts(userId)
+}
 
 module.exports = { createAccountElement, renderAccounts };
