@@ -71,3 +71,12 @@ article {
   box-shadow: 6px 6px 8px;
   cursor: pointer;
 }
+
+table {
+  width: 100%;
+}
+
+tr {
+  display:flex;
+  flex-direction: row;
+}

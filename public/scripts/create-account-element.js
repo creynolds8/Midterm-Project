@@ -14,12 +14,18 @@ const copyText = function (id) {
   const createAccountElement = function (account) {
     const newAccount = $(`
     <article>
+    <table>
+    <tr>
+    <td>
     <p>${account.website_name}</p>
     <p id="${account.username}">${account.username}</p>
     <button onclick="copyText('${account.username}')" class="account-button">Copy username</button>
     <p id="${account.password}">${account.password}</p>
     <button onclick="copyText('${account.password}')" class="account-button">Copy password</button>
     <button onclick="location.href='accounts/${account.id}';" class="account-button">Edit</button>
+    </td>
+    </tr>
+    </table>
     </article>
     `);
     return newAccount;
