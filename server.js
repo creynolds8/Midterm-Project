@@ -40,6 +40,8 @@ const createAccountRoute = require('./routes/create-account');
 const accountsRoute = require('./routes/accounts');
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout')
+const { Template } = require('ejs');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -49,6 +51,7 @@ app.use('/createnewaccount', createAccountRoute);
 app.use('/accounts', accountsRoute);
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -56,7 +59,8 @@ app.use('/login', loginRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const templateVars = {userId: req.session.userId, error: null}
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {

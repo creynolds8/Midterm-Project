@@ -10,7 +10,8 @@ router.get('/getaccounts', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  res.render('accounts');
+  const templateVars = {userId: req.session.userId, error: null}
+  res.render('accounts', templateVars);
 });
 
 
