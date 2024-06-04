@@ -40,6 +40,7 @@ const createAccountRoute = require('./routes/create-account');
 const accountsRoute = require('./routes/accounts');
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
+const logoutRoutes = require('./routes/logout')
 const { Template } = require('ejs');
 
 // Mount all resource routes
@@ -50,6 +51,7 @@ app.use('/createnewaccount', createAccountRoute);
 app.use('/accounts', accountsRoute);
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
