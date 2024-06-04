@@ -3,13 +3,17 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('create-account');
+  const userId = req.session.userId;
+  if (!userId) {
+    return res.send({ message: "not logged in" });
+  }
+  const templateVars = { userId: req.session.userId, error: null, orgName: req.session.organizationName, userName: req.session.userName };
+  res.render('create-account', templateVars);
 });
 
 router.post('/', (req, res) => {
-//once we get the login route working we need to
-//get the id from cookies not hard coded!!!
-  addAccount(req.body, 1)
+  const userId = req.session.userId;
+  addAccount(req.body, userId)
     .then(() => {
       res.redirect('accounts');
     })

@@ -7,6 +7,9 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  min-height: 100vh;
+  position: relative;
+  margin-bottom: 5vh;
 }
 
 .categories {
@@ -41,7 +44,7 @@ body {
   align-items: center;
 }
 
-.accounts {
+#accounts {
   border: 4px solid;
   padding: 0.5rem;
 }

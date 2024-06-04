@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Create New Account</title>
+    <title>Edit Account</title>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/nav.css" />
     <link rel="stylesheet" href="/styles/create.css" />
-    <link rel="stylesheet" href="/styles/footer.css" />
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
@@ -41,34 +40,35 @@
             <option value="20">20</option>
           </select>
           <div class="password-checkbox">
-            <input type="checkbox" id="lower-case" name="lower-case" />
+            <input type="checkbox" id="lower-case" name="lower-case" checked/>
             <label for="lower-case"> Lowercase Letters</label>
           </div>
           <div class="password-checkbox">
-            <input type="checkbox" id="upper-case" name="upper-case" />
+            <input type="checkbox" id="upper-case" name="upper-case" checked />
             <label for="upper-case"> Uppercase Letters</label>
           </div>
           <div class="password-checkbox">
-            <input type="checkbox" id="numbers" name="numbers" />
+            <input type="checkbox" id="numbers" name="numbers" checked />
             <label for="numbers"> Numbers</label>
           </div>
           <div class="password-checkbox">
-            <input type="checkbox" id="special-chars" name="special-chars" />
+            <input type="checkbox" id="special-chars" name="special-chars" checked />
             <label for="special-chars"> Special Characters</label>
           </div>
           <button type="submit" class="password-create">GENERATE</button>
         </div>
       </form>
-      <form action="/createnewaccount" method="POST">
+      <form action="/accounts/:id" method="POST">
         <div class="create-account-form">
-          <h2>CREATE NEW ACCOUNT</h2>
+          <h2>EDIT YOUR ACCOUNT</h2>
+          <input type="text" name="accountId" id="accountId" value="<%= account.id %>" hidden>
           <table>
             <tr>
               <td>
                 <label for="website-input">Input the Website Name: </label>
               </td>
               <td>
-                <input type="text" name="website-input" id="website-input" />
+                <input type="text" name="website-input" id="website-input" value="<%= account['website_name'] %>" />
               </td>
             </tr>
             <tr>
@@ -76,7 +76,7 @@
                 <label for="username-input">Input your Username: </label>
               </td>
               <td>
-                <input type="text" name="username-input" id="username-input" />
+                <input type="text" name="username-input" id="username-input" value="<%= account.username %>"/>
               </td>
             </tr>
             <tr>
@@ -89,6 +89,7 @@
                   name="password-input"
                   id="password-input"
                   placeholder="TOP SECRET PASSWORD"
+                  value="<%= account.password %>"
                 />
               </td>
             </tr>
@@ -116,7 +117,4 @@
     </div>
     <script src="/scripts/passwordForm.js" type="module"></script>
   </body>
-
-  <footer><%- include('partials/_footer') %></footer>
-
 </html>

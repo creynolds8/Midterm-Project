@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -21,10 +22,14 @@
 <header><%- include('partials/_navbar') %></header>
 
 <body>
-  <h1>Welcome to PASSWORD KEEPER</h1>
-  <h2>The most secure password storage app on the web!</h2>
-  <h3>Please login to view your organization's stored accounts</h3>
-  <p class="blurb">PASSWORD KEEPER, your all-in-one password vault. Stop juggling sticky notes and browser bookmarks. PASSWORD KEEPER securely stores all your logins in one place, accessible with just one master password.</p>
-</body>
+  <div class="main-content">
+    <h1>Welcome to PASSWORD KEEPER</h1>
+    <h2>The most secure password storage app on the web!</h2>
+    <h3>Please login to view your organization's stored accounts</h3>
+    <p class="blurb">PASSWORD KEEPER, your all-in-one password vault. Stop juggling sticky notes and browser bookmarks. PASSWORD KEEPER securely stores all your logins in one place, accessible with just one master password.</p>
+  </div>
+  </body>
+
+<footer><%- include('partials/_footer') %></footer>
 
 </html>
