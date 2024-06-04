@@ -53,7 +53,19 @@ const addAccount = function(account, userId) {
 
 
 
-
+const deleteAccountById = function(accountId) {
+  const queryStr = `
+  DELETE FROM accounts WHERE accounts.id = $1;
+    `;
+  const queryArgs = [accountId];
+  return db.query(queryStr, queryArgs)
+    .then((results) => {
+      return results.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
 
 const organizationName = function(userId) {
   const queryStr = `
@@ -223,7 +235,7 @@ const getAccountsByCategory = function(categoryId, userId) {
 };
 
 
-module.exports = { getUserName, addAccount, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts, getAccountById, getAccountsByCategory};
+module.exports = { getUserName, addAccount, deleteAccountById, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts, getAccountById, getAccountsByCategory};
 
 
 // const account = {
