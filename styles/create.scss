@@ -60,6 +60,11 @@ td {
   padding: 0.5rem;
 }
 
+.edit-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
 .account-button {
   height: 2rem;
   padding: 0.25rem 0.5rem;
@@ -73,5 +78,5 @@ td {
 }
 
 #edit-button {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
