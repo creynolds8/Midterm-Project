@@ -1,7 +1,6 @@
 
-const copyText = function (id) {
-  const paragraph = document.getElementById(id);
-  const textToCopy = paragraph.textContent;
+const copyText = function (textToCopy) {
+
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
       console.log("Text copied to clipboard successfully!");
@@ -13,20 +12,15 @@ const copyText = function (id) {
 
   const createAccountElement = function (account) {
     const newAccount = $(`
-    <article>
-    <table>
+
     <tr>
-    <td>
-    <p>${account.website_name}</p>
-    <p id="${account.username}">${account.username}</p>
-    <button onclick="copyText('${account.username}')" class="account-button">Copy username</button>
-    <p id="${account.password}">${account.password}</p>
-    <button onclick="copyText('${account.password}')" class="account-button">Copy password</button>
-    <button onclick="location.href='accounts/${account.id}';" class="account-button">Edit</button>
-    </td>
-    </tr>
-    </table>
-    </article>
+    <th>${account.website_name}</th>
+    <th>${account.username}</th>
+    <th><button onclick="copyText('${account.username}')" class="account-button">Copy username</button></th>
+    <th>${account.password}</th>
+    <th>    <button onclick="copyText('${account.password}')" class="account-button">Copy password</button></th>
+    <th><button onclick="location.href='accounts/${account.id}';" class="account-button">Edit</button></th>
+  </tr>
     `);
     return newAccount;
   };
