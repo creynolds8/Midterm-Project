@@ -9,6 +9,10 @@ body {
 
 .main-content {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .blurb {
   width: 50vw;
