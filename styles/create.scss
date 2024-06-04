@@ -1,9 +1,18 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  min-height: 100vh;
+  background: slategrey;
+}
+
 .outer-div {
   margin-top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
+  }
 
 .password-selector {
   display: flex;
@@ -14,7 +23,10 @@
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
-  height: 100%;
+}
+
+.password-checkbox {
+  padding: 0.8rem;
 }
 
 .create-account-form {
