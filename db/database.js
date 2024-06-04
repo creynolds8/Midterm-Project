@@ -85,20 +85,17 @@ const organizationId = function(userId) {
     });
 };
 
-
-
 // takes in the information from the update account form as an object and updates db
-const updateAccount = function(account, accountId) {
+const updateAccount = function(account) {
   const queryStr = `
   UPDATE accounts
   SET username = $1,
   password = $2,
   website_name = $3,
-  website_url = $4,
-  category_id = $5
-  WHERE id = $6;
+  category_id = $4
+  WHERE id = $5::INTEGER;
     `;
-  const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, account.categoryId, accountId];
+  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["category-selection"], account.accountId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
@@ -107,6 +104,28 @@ const updateAccount = function(account, accountId) {
       console.log(err.message);
     });
 };
+
+// stretch version
+// // takes in the information from the update account form as an object and updates db
+// const updateAccount = function(account, accountId) {
+//   const queryStr = `
+//   UPDATE accounts
+//   SET username = $1,
+//   password = $2,
+//   website_name = $3,
+//   website_url = $4,
+//   category_id = $5
+//   WHERE id = $6;
+//     `;
+//   const queryArgs = [account.username, account.password, account.websiteName, account.websiteUrl, account.categoryId, accountId];
+//   return db.query(queryStr, queryArgs)
+//     .then((results) => {
+//       return results.rows;
+//     })
+//     .catch((err) => {
+//       console.log(err.message);
+//     });
+// };
 
 
 const getAllCategories = function() {
