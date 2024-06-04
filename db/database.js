@@ -1,9 +1,14 @@
 const db = require('./connection');
 
-const getUsers = () => {
-  return db.query('SELECT * FROM users;')
+const getUserName = (userId) => {
+  const queryStr = 'SELECT name FROM users WHERE id = $1;';
+  const queryArgs = [userId];
+  return db.query(queryStr, queryArgs)
     .then(data => {
-      return data.rows;
+      return data.rows[0];
+    })
+    .catch((err) => {
+      console.log(err.message);
     });
 };
 
@@ -60,7 +65,7 @@ const organizationName = function(userId) {
   const queryArgs = [userId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      return results.rows;
+      return results.rows[0];
     })
     .catch((err) => {
       console.log(err.message);
@@ -218,7 +223,7 @@ const getAccountsByCategory = function(categoryId, userId) {
 };
 
 
-module.exports = { getUsers, addAccount, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts, getAccountById, getAccountsByCategory};
+module.exports = { getUserName, addAccount, organizationName, organizationId, updateAccount, getCategoriesByOrg, getAllCategories, allAccounts, getAccountById, getAccountsByCategory};
 
 
 // const account = {
