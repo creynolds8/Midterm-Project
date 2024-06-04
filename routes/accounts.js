@@ -13,15 +13,13 @@ router.get('/', (req, res) => {
   res.render('accounts');
 });
 
+
+
 router.get('/:id', (req, res) => {
   const accountId = req.params.id;
-  console.log("accountId", accountId);
   getAccountById(accountId)
     .then((results) => {
-      console.log("results", results);
-      const categoryValue = results["category_id"]
       const templateVars = { account: results, userId: req.session.userId };
-      console.log("template Vars", templateVars);
       res.render('edit-account', templateVars);
     })
     .catch((error) => {
