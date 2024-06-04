@@ -7,13 +7,13 @@
       </div>
 
       <% if (userId) { %>
-        <h3>ORGANIZATION NAME</h3>
+        <h2><%= orgName %></h2>
       <% } %>
 
       <% if (userId) { %>
         <div class="log-button">
           <form method="post" action="/logout">
-            Logged in as: dev
+            Logged in as: <%= userName %>
             <button type="submit" class="nav-button">Logout</button>
           </form>
         </div>
