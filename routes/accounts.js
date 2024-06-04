@@ -10,7 +10,7 @@ router.get('/getaccounts', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  const templateVars = {userId: req.session.userId, error: null}
+  const templateVars = {userId: req.session.userId, error: null, orgName: req.session.organizationName, userName: req.session.userName};
   res.render('accounts', templateVars);
 });
 
@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   const accountId = req.params.id;
   getAccountById(accountId)
     .then((results) => {
-      const templateVars = { account: results, userId: req.session.userId };
+      const templateVars = { account: results, userId: req.session.userId, orgName: req.session.organizationName, userName: req.session.userName };
       res.render('edit-account', templateVars);
     })
     .catch((error) => {
