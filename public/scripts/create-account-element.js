@@ -19,7 +19,7 @@ const copyText = function (id) {
     <button onclick="copyText('${account.username}')" class="account-button">Copy username</button>
     <p id="${account.password}">${account.password}</p>
     <button onclick="copyText('${account.password}')" class="account-button">Copy password</button>
-    <button class="account-button">Edit</button>
+    <button onclick="location.href='accounts/${account.id}';" class="account-button">Edit</button>
     </article>
     `);
     return newAccount;
