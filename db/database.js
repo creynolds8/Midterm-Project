@@ -170,7 +170,7 @@ const getAccountById = function(accountId) {
   const queryArgs = [accountId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
-      return results.rows;
+      return results.rows[0];
     })
     .catch((err) => {
       console.log(err.message);
