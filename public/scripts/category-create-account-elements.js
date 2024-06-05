@@ -14,7 +14,6 @@ const createAccountElementCategory = function (account) {
 
 const renderAccountsCategory = function (accounts) {
   for (const account of accounts) {
-    console.log(account);
     const $account = createAccountElementCategory(account);
     $("#accounts").prepend($account);
   }
