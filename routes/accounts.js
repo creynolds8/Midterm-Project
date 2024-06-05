@@ -53,7 +53,7 @@ router.post('/:id/delete', (req, res) => {
 
 
 
-router.post('/:id', (req, res) => {
+router.post('/:id/update', (req, res) => {
   const account = req.body;
   console.log("account", account);
   updateAccount(account)

@@ -16,6 +16,7 @@
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/error-handling.js"></script>
   </head>
 
   <header><%- include('partials/_navbar') %></header>
@@ -110,7 +111,7 @@
               </td>
             </tr>
           </table>
-                <button class="create-account-button">CREATE</button>
+                <button class="create-account-button" id="createAccount">CREATE</button>
         </div>
       </form>
     </div>
