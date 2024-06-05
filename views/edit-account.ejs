@@ -120,12 +120,19 @@
         </div>
       </form>
     </div>
+    <div class="delete-section">
+
       <div class="delete-button">
+        <div class="delete-text">
+          <p>If you no longer need to store the information for this account, it can be deleted with this button:</p>
+          <p>WARNING! This cannot be undone! Account information will need to be manually readded by creating a new account</p>
+        </div>
         <form action="/accounts/:id/delete" method="POST">
           <input type="text" name="accountId" id="accountId" value="<%= account.id %>" hidden>
           <button class="account-button" id="delete-button">DELETE</button>
         </form>
       </div>
+    </div>
     <script src="/scripts/passwordForm.js" type="module"></script>
   </body>
   <footer><%- include('partials/_footer') %></footer>
