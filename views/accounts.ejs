@@ -42,17 +42,25 @@
     <p>Security</p>
   </section>
   <section class="main-accounts">
-    <span>
+
       <h2>Accounts</h2>
-      <% if (true) { %>
-        <h3>Category Name</h3>
-        <% } %>
       <a href="/createnewaccount">
         <button class="account-button">CREATE NEW ACCOUNT</button>
       </a>
-    </span>
-    <div id="accounts">
-    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>website</th>
+          <th>username</th>
+          <th>copy username</th>
+          <th>password</th>
+          <th>copy password</th>
+          <th>edit</th>
+        </tr>
+      </thead>
+      <tbody id="accounts"></tbody>
+    </table>
   </section>
 </div>
 </body>

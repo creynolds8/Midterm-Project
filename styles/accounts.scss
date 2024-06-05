@@ -59,6 +59,8 @@ article {
 }
 
 .account-button {
+  display: flex;
+  align-items: center;
   height: 2rem;
   padding: 0.25rem 0.5rem;
   border: none;
@@ -68,4 +70,8 @@ article {
 .account-button:hover {
   box-shadow: 6px 6px 8px;
   cursor: pointer;
+}
+
+table, th, td {
+  border: 1px solid black;
 }
