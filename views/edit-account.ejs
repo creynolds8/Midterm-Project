@@ -114,7 +114,6 @@
           <div class="edit-buttons">
             <button class="account-button" id="edit-button">EDIT</button>
             <form action="/accounts/:id/delete" method="POST">
-              <button class="account-button" id="edit-button">DELETE</button>
             </form>
 
           </div>
@@ -124,7 +123,7 @@
     <div>
       <form action="/accounts/:id/delete" method="POST">
         <input type="text" name="accountId" id="accountId" value="<%= account.id %>" hidden>
-      <button class="account-button" id="edit-button">DELETE</button>
+      <button class="account-button" id="delete-button">DELETE</button>
     </form>
   </div>
     <script src="/scripts/passwordForm.js" type="module"></script>
