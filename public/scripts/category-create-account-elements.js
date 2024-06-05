@@ -24,6 +24,7 @@ const loadAccountsByCategory = function (id) {
     url: `http://localhost:8080/accounts/getcategoryaccounts/${id}`,
   }).then((res) => {
     $("#accounts").empty();
+    $('.table-title').text(`Accounts: ${res[0].categoryname}`);
     renderAccountsCategory(res);
   });
 };
