@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/nav.css" />
     <link rel="stylesheet" href="/styles/create.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
@@ -118,19 +119,24 @@
           <div class="edit-buttons">
             <button class="account-button" id="edit-button">EDIT</button>
             <form action="/accounts/:id/delete" method="POST">
-              <button class="account-button" id="edit-button">DELETE</button>
             </form>
-
           </div>
         </div>
       </form>
     </div>
-    <div>
-      <form action="/accounts/:id/delete" method="POST">
-        <input type="text" name="accountId" id="accountId" value="<%= account.id %>" hidden>
-      <button class="account-button" id="edit-button">DELETE</button>
-    </form>
-  </div>
+    <div class="delete-section">
+      <div class="delete-button">
+        <div class="delete-text">
+          <p>If you no longer need to store the information for this account, it can be deleted with this button:</p>
+          <p>WARNING! This cannot be undone! Account information will need to be manually readded by creating a new account</p>
+        </div>
+        <form action="/accounts/:id/delete" method="POST">
+          <input type="text" name="accountId" id="accountId" value="<%= account.id %>" hidden>
+          <button class="account-button" id="delete-button">DELETE</button>
+        </form>
+      </div>
+    </div>
     <script src="/scripts/passwordForm.js" type="module"></script>
   </body>
+  <footer><%- include('partials/_footer') %></footer>
 </html>
