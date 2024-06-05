@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { allAccounts, getAccountById, updateAccount, getAccountsByCategory } = require('../db/database');
+const { allAccounts, getAccountById, updateAccount, getAccountsByCategory, deleteAccountById } = require('../db/database');
 
 router.get('/getaccounts', (req, res) => {
   allAccounts(req.session.userId)
@@ -39,6 +39,19 @@ router.get('/:id', (req, res) => {
     })
 
 });
+router.post('/:id/delete', (req, res) => {
+  const account = req.body;
+  console.log("account", account);
+  deleteAccountById(account.accountId)
+    .then(() => {
+      res.redirect('/accounts');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
+
 
 router.post('/:id', (req, res) => {
   const account = req.body;
@@ -51,6 +64,7 @@ router.post('/:id', (req, res) => {
       console.log(error);
     });
 });
+
 
 
 module.exports = router;
