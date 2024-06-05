@@ -213,9 +213,10 @@ const getAccountById = function(accountId) {
     });
 };
 
+// get accounts and category name
 const getAccountsByCategory = function(categoryId, userId) {
   const queryStr = `
-  SELECT DISTINCT accounts.*
+  SELECT DISTINCT accounts.*, categories.name AS categoryName
   FROM accounts
   JOIN categories ON categories.id = category_id
   JOIN organizations ON organization_id = organization_id
