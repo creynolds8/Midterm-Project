@@ -1,6 +1,5 @@
 
 const copyText = function (textToCopy) {
-
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
       console.log("Text copied to clipboard successfully!");
