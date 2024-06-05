@@ -100,14 +100,14 @@
               <td>
                 <select name="category-selection" id="category-selection">
                   <option value="false" selected>-- Website Type --</option>
-                  <option value="1">Social Media</option>
-                  <option value="2">Financial</option>
-                  <option value="3">Email</option>
-                  <option value="4">Cloud Storage</option>
-                  <option value="5">Project Management</option>
-                  <option value="6">Product Management</option>
-                  <option value="7">Entertainment</option>
-                  <option value="8">Security</option>
+                  <option value="1" <%= account.category_id === 1 ? 'selected' : '' %>>Social Media</option>
+                  <option value="2" <%= account.category_id === 2 ? 'selected' : '' %>>Financial</option>
+                  <option value="3" <%= account.category_id === 3 ? 'selected' : '' %>>Email</option>
+                  <option value="4" <%= account.category_id === 4 ? 'selected' : '' %>>Cloud Storage</option>
+                  <option value="5" <%= account.category_id === 5 ? 'selected' : '' %>>Project Management</option>
+                  <option value="6" <%= account.category_id === 6 ? 'selected' : '' %>>Product Management</option>
+                  <option value="7" <%= account.category_id === 7 ? 'selected' : '' %>>Entertainment</option>
+                  <option value="8" <%= account.category_id === 8 ? 'selected' : '' %>>Security</option>
               </td>
             </tr>
           </table>
