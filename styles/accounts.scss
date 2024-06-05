@@ -33,6 +33,11 @@ body {
   padding-bottom: 0.2rem;
 }
 
+.category-name:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 4px azure;
+}
+
 .main-accounts {
   width: 70vw;
 }
