@@ -26,7 +26,6 @@ const createAccountElement = function (account) {
 
 const renderAccounts = function (accounts) {
   for (const account of accounts) {
-    console.log(account);
     const $account = createAccountElement(account);
     $("#accounts").prepend($account);
   }
