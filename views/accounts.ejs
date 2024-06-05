@@ -16,10 +16,8 @@
   <script defer src="/scripts/app.js"></script>
   <script type="module" defer src="/scripts/copytext.js"></script>
   <script type="module" defer src="/scripts/copy_to_clipboard.js"></script>
-  <script
-  type="text/javascript"
-  src="/scripts/create-account-element.js"
-></script>
+  <script type="text/javascript" src="/scripts/create-account-element.js"></script>
+  <script type="text/javascript" src="/scripts/category-create-account-elements.js"></script>
   <title>Accounts</title>
 </head>
 
@@ -32,18 +30,18 @@
     <div class="categories-header">
       <h2>Categories</h2>
     </div>
-    <p>Social Media</p>
-    <p>Financial</p>
-    <p>Email</p>
-    <p>Cloud Storge</p>
-    <p>Product Management</p>
-    <p>Project Management</p>
-    <p>Entertainment</p>
-    <p>Security</p>
+    <p onclick="loadAccountsByCategory(1)">Social Media</p>
+    <p onclick="loadAccountsByCategory(2)">Financial</p>
+    <p onclick="loadAccountsByCategory(3)">Email</p>
+    <p onclick="loadAccountsByCategory(4)">Cloud Storge</p>
+    <p onclick="loadAccountsByCategory(5)">Product Management</p>
+    <p onclick="loadAccountsByCategory(6)">Project Management</p>
+    <p onclick="loadAccountsByCategory(7)">Entertainment</p>
+    <p onclick="loadAccountsByCategory(8)">Security</p>
   </section>
   <section class="main-accounts">
 
-      <h2>Accounts</h2>
+      <h2 class="table-title">Accounts</h2>
       <a href="/createnewaccount">
         <button class="account-button">CREATE NEW ACCOUNT</button>
       </a>

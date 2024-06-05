@@ -1,6 +1,5 @@
 
 const copyText = function (textToCopy) {
-
   navigator.clipboard.writeText(textToCopy)
     .then(() => {
       console.log("Text copied to clipboard successfully!");
@@ -10,8 +9,8 @@ const copyText = function (textToCopy) {
     });
 };
 
-  const createAccountElement = function (account) {
-    const newAccount = $(`
+const createAccountElement = function (account) {
+  const newAccount = $(`
 
     <tr>
     <th>${account.website_name}</th>
@@ -22,26 +21,29 @@ const copyText = function (textToCopy) {
     <th><button onclick="location.href='accounts/${account.id}';" class="account-button">Edit</button></th>
   </tr>
     `);
-    return newAccount;
-  };
+  return newAccount;
+};
 
-  const renderAccounts = function (accounts) {
-    for (const account of accounts) {
-      console.log(account);
-      const $account = createAccountElement(account);
-      $("#accounts").prepend($account);
-    }
-  };
+const renderAccounts = function (accounts) {
+  for (const account of accounts) {
+    const $account = createAccountElement(account);
+    $("#accounts").prepend($account);
+  }
+};
 
-  const loadAccounts = function() {
-    $.get({
-      url: "http://localhost:8080/accounts/getaccounts",
-    }).then((res) => {
-      $("#accounts").empty();
-      renderAccounts(res);
-    });
-  };
+const loadAccounts = function () {
+  $.get({
+    url: "http://localhost:8080/accounts/getaccounts",
+  }).then((res) => {
+    $("#accounts").empty();
+    $('.table-title').text("Accounts");
+    renderAccounts(res);
+  });
+};
 
-  $(document).ready(function () {
-    loadAccounts()
+$(document).ready(function () {
+  loadAccounts()
 })
+
+
+

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/nav.css" />
     <link rel="stylesheet" href="/styles/create.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
@@ -55,7 +56,7 @@
             <input type="checkbox" id="special-chars" name="special-chars" checked />
             <label for="special-chars"> Special Characters</label>
           </div>
-          <button type="submit" class="password-create">GENERATE</button>
+          <button type="submit" class="account-button">GENERATE</button>
         </div>
       </form>
       <form action="/accounts/:id" method="POST">
@@ -100,21 +101,38 @@
               <td>
                 <select name="category-selection" id="category-selection">
                   <option value="false" selected>-- Website Type --</option>
-                  <option value="1">Social Media</option>
-                  <option value="2">Financial</option>
-                  <option value="3">Email</option>
-                  <option value="4">Cloud Storage</option>
-                  <option value="5">Project Management</option>
-                  <option value="6">Product Management</option>
-                  <option value="7">Entertainment</option>
-                  <option value="8">Security</option>
+                  <option value="1" <%= account.category_id === 1 ? 'selected' : '' %>>Social Media</option>
+                  <option value="2" <%= account.category_id === 2 ? 'selected' : '' %>>Financial</option>
+                  <option value="3" <%= account.category_id === 3 ? 'selected' : '' %>>Email</option>
+                  <option value="4" <%= account.category_id === 4 ? 'selected' : '' %>>Cloud Storage</option>
+                  <option value="5" <%= account.category_id === 5 ? 'selected' : '' %>>Project Management</option>
+                  <option value="6" <%= account.category_id === 6 ? 'selected' : '' %>>Product Management</option>
+                  <option value="7" <%= account.category_id === 7 ? 'selected' : '' %>>Entertainment</option>
+                  <option value="8" <%= account.category_id === 8 ? 'selected' : '' %>>Security</option>
               </td>
             </tr>
           </table>
-                <button class="create-account-button">CREATE</button>
+          <div class="edit-buttons">
+            <button class="account-button" id="edit-button">EDIT</button>
+            <form action="/accounts/:id/delete" method="POST">
+            </form>
+          </div>
         </div>
       </form>
     </div>
+    <div class="delete-section">
+      <div class="delete-button">
+        <div class="delete-text">
+          <p>If you no longer need to store the information for this account, it can be deleted with this button:</p>
+          <p>WARNING! This cannot be undone! Account information will need to be manually readded by creating a new account</p>
+        </div>
+        <form action="/accounts/:id/delete" method="POST">
+          <input type="text" name="accountId" id="accountId" value="<%= account.id %>" hidden>
+          <button class="account-button" id="delete-button">DELETE</button>
+        </form>
+      </div>
+    </div>
     <script src="/scripts/passwordForm.js" type="module"></script>
   </body>
+  <footer><%- include('partials/_footer') %></footer>
 </html>
