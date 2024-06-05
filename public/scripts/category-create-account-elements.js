@@ -1,16 +1,3 @@
-$(document).ready(function() {
-
-const copyText = function(textToCopy) {
-  navigator.clipboard.writeText(textToCopy)
-    .then(() => {
-      console.log("Text copied to clipboard successfully!");
-    })
-    .catch(err => {
-      console.error('Unable to copy text to clipboard: ', err);
-    });
-};
-
-
 const createAccountElementCategory = function (account) {
   const newAccount = $(`
   <tr>
@@ -25,7 +12,7 @@ const createAccountElementCategory = function (account) {
   return newAccount;
 };
 
-const renderAccountsCategory = function(accounts) {
+const renderAccountsCategory = function (accounts) {
   for (const account of accounts) {
     console.log(account);
     const $account = createAccountElementCategory(account);
@@ -33,17 +20,15 @@ const renderAccountsCategory = function(accounts) {
   }
 };
 
+const loadAccountsByCategory = function (id) {
+  $.get({
+    url: `http://localhost:8080/accounts/getcategoryaccounts/${id}`,
+  }).then((res) => {
+    $("#accounts").empty();
+    renderAccountsCategory(res);
+  });
+};
 
-
-
-
-  const loadAccountsByCategory = function() {
-    $.get({
-      url: "http://localhost:8080/accounts/getcategoryaccounts/",
-    }).then((res) => {
-      $("#accounts").empty();
-      renderAccountsCategory(res);
-    });
-  };
-
+$(document).ready(function () {
+  loadAccountsByCategory(id);
 });
