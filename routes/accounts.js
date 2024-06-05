@@ -1,12 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const { allAccounts, getAccountById, updateAccount } = require('../db/database');
+const { allAccounts, getAccountById, updateAccount, getAccountsByCategory } = require('../db/database');
 
 router.get('/getaccounts', (req, res) => {
   allAccounts(req.session.userId)
     .then((response) => {
       res.json(response);
     });
+});
+
+router.get('/getcategoryaccounts/:id', (req, res) => {
+  const categoryId = req.params.id;
+  console.log("category Id", categoryId);
+
+  getAccountsByCategory(categoryId, req.session.userId)
+    .then((response) => {
+      res.json(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
 });
 
 router.get('/', (req, res) => {
@@ -23,9 +37,6 @@ router.get('/:id', (req, res) => {
       const templateVars = { account: results, userId: req.session.userId, orgName: req.session.organizationName, userName: req.session.userName };
       res.render('edit-account', templateVars);
     })
-    .catch((error) => {
-      console.log(error);
-    });
 
 });
 
