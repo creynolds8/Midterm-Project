@@ -1,7 +1,10 @@
-const createAccountElementCategory = function (account) {
+const createAccountElementCategory = function(account) {
   const newAccount = $(`
   <tr>
-  <th>${account.website_name}</th>
+  <th class="logo">
+    <img class="web-logo" src="https://logo.clearbit.com/${account.website_url}?size=50" onerror="this.src='https://github.com/creynolds8/Midterm-Project/blob/feature/new-color/doc/bee_logo_black-removebg-preview.png?raw=true?size=1'">
+    <p>${account.website_name}</p>
+    </th>
   <th>${account.username}</th>
   <th><button onclick="copyText('${account.username}')" class="account-button">Copy username</button></th>
   <th>${account.password}</th>
