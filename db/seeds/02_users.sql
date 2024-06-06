@@ -5,3 +5,4 @@ INSERT INTO users (name, password, email, organization_id) VALUES ('Bob', 'Secur
 INSERT INTO users (name, password, email, organization_id) VALUES ('Ray', 'SecurePass789', 'ray@example.org', 3);
 INSERT INTO users (name, password, email, organization_id) VALUES ('Diachi', 'SecurePass987', 'diachi@example.org', 4);
 INSERT INTO users (name, password, email, organization_id) VALUES ('Lucas', 'SecurePass654', 'lucas@example.org', 5);
+INSERT INTO users (name, password, email, organization_id) VALUES ('John', 'john123', 'john@example.com', 1);
