@@ -50,3 +50,5 @@ INSERT INTO accounts (username, password, website_name, website_url, organizatio
 
 -- Security
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('secuser3', 'secureent456', 'Norton', 'https://www.norton.com/', 3, 7);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('secuser3', 'secureent456', 'McAfee', 'https://www.mcafee.com/', 4, 7);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('secuser3', 'secureent456', 'Kaspersky', 'https://www.kaspersky.com/', 5, 7);
