@@ -9,11 +9,14 @@ const copyText = function (textToCopy) {
     });
 };
 
-const createAccountElement = function (account) {
+const createAccountElement = function(account) {
   const newAccount = $(`
 
     <tr>
-    <th>${account.website_name}</th>
+    <th class="logo">
+    <img src="https://logo.clearbit.com/${account.website_url}?size=50">
+    <p>${account.website_name}</p>
+    </th>
     <th>${account.username}</th>
     <th><button onclick="copyText('${account.username}')" class="account-button">Copy username</button></th>
     <th>${account.password}</th>
