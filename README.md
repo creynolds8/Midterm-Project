@@ -1,5 +1,7 @@
 # WELCOME TO OUR MIDTERM PROJECT: BeeSecure
 
+BeeSecure is a password storage app that connects multiple users to a single organization. Each user connencted to an organization can access the same account information for easy information sharing and access throughout an organization. Users can access, create, and edit account information like the username and password for each account.
+
 ## Getting Started
 
 1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
@@ -17,6 +19,10 @@
 
 ## Dependencies
 
-- Node 10.x or above
-- NPM 5.x or above
-- PG 6.x
+- Chalk
+- Cookie-sessions
+- Dotenv
+- EJS
+- Express
+- Pg
+- Sass
