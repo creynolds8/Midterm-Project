@@ -16,13 +16,13 @@ const getUserName = (userId) => {
 // takes in the information from the create account form as an object and updates db
 const addAccount = function(account, userId) {
   const queryStr = `INSERT INTO accounts (
-    username, password, website_name, category_id, organization_id)
-    VALUES ($1, $2, $3, $4, (SELECT organization_id
+    username, password, website_name, website_url, category_id, organization_id)
+    VALUES ($1, $2, $3, $4 $5, (SELECT organization_id
       FROM users
-      WHERE users.id = $5))
+      WHERE users.id = $6))
     RETURNING *;
     `;
-  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["category-selection"], userId,];
+  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["websiteUrl-input"], account["category-selection"], userId,];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows[0];
@@ -109,10 +109,11 @@ const updateAccount = function(account) {
   SET username = $1,
   password = $2,
   website_name = $3,
-  category_id = $4
-  WHERE id = $5::INTEGER;
+  website_url =$4,
+  category_id = $5
+  WHERE id = $6::INTEGER;
     `;
-  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["category-selection"], account.accountId];
+  const queryArgs = [account["username-input"], account["password-input"], account["website-input"], account["websiteUrl-input"], account["category-selection"], account.accountId];
   return db.query(queryStr, queryArgs)
     .then((results) => {
       return results.rows;
