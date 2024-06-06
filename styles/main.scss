@@ -13,7 +13,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 4rem;
 }
+
+#web-name {
+  text-shadow: 0px 0px 8px white;
+}
+
 .blurb {
   width: 50vw;
+  font-size: 1.25rem;
 }
