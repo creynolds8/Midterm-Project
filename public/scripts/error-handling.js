@@ -34,8 +34,8 @@ $(document).ready(function() {
   $('.password-create').on('click', function(event) {
     const lowercase = document.getElementById("lower-case").checked;
     const uppercase = document.getElementById("upper-case").checked;
-    const numbers = document.getElementById("lower-case").checked;
-    const symbols = document.getElementById("lower-case").checked;
+    const numbers = document.getElementById("numbers").checked;
+    const symbols = document.getElementById("special-chars").checked;
 
     if (!lowercase && !uppercase && !numbers && !symbols) {
       event.preventDefault();
