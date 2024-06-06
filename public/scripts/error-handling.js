@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     if (website === '' || username === '' || password === '') {
       event.preventDefault();
-      $('div.error-message').text('Error: Oops! Did you forget to type something? Please fill in all fields and try again :)').slideDown();
+      $('div.error-message').text('Did you forget to type something? Please fill in all fields and try again').slideDown();
       return;
     }
     $('div.error-message').slideUp();
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     if (website === '' || username === '' || password === '') {
       event.preventDefault();
-      $('div.error-message').text('Error: Oops! Did you forget to type something? Please fill in all fields and try again :)').slideDown();
+      $('div.error-message').text('Did you forget to type something? Please fill in all fields and try again').slideDown();
       return;
     }
     $('div.error-message').slideUp();
