@@ -25,44 +25,50 @@
       <div class="error-message"> error: message </div>
     </span>
     <div class="outer-div">
-      <form id="password-generator">
-        <div class="password-selector">
-          <label for="length">Select Password Parameters</label>
-          <select id="length" name="password-length">
-            <option value="false" selected>-- Choose a length --</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-          </select>
-          <div class="password-checkbox">
-            <input type="checkbox" id="lower-case" name="lower-case" checked/>
-            <label for="lower-case"> Lowercase Letters</label>
+      <div class="outer-password">
+        <form id="password-generator">
+          <div class="password-selector">
+            <label for="length">Select Password Parameters</label>
+            <select id="length" name="password-length">
+              <option value="false" selected>-- Choose a length --</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+            </select>
+            <div class="password-checkbox">
+              <input type="checkbox" id="lower-case" name="lower-case" checked/>
+              <label for="lower-case"> Lowercase Letters</label>
+            </div>
+            <div class="password-checkbox">
+              <input type="checkbox" id="upper-case" name="upper-case" checked />
+              <label for="upper-case"> Uppercase Letters</label>
+            </div>
+            <div class="password-checkbox">
+              <input type="checkbox" id="numbers" name="numbers" checked />
+              <label for="numbers"> Numbers</label>
+            </div>
+            <div class="password-checkbox">
+              <input type="checkbox" id="special-chars" name="special-chars" checked />
+              <label for="special-chars"> Special Characters</label>
+            </div>
+            <button type="submit" class="password-create account-button">GENERATE</button>
           </div>
-          <div class="password-checkbox">
-            <input type="checkbox" id="upper-case" name="upper-case" checked />
-            <label for="upper-case"> Uppercase Letters</label>
-          </div>
-          <div class="password-checkbox">
-            <input type="checkbox" id="numbers" name="numbers" checked />
-            <label for="numbers"> Numbers</label>
-          </div>
-          <div class="password-checkbox">
-            <input type="checkbox" id="special-chars" name="special-chars" checked />
-            <label for="special-chars"> Special Characters</label>
-          </div>
-          <button type="submit" class="password-create">GENERATE</button>
-        </div>
-      </form>
+        </form>
+        <a href="/accounts">
+          <button class="accounts-link account-button">Back to all Accounts</button>
+        </a>
+      </div>
+
       <form action="/accounts/:id/update" method="POST">
         <div class="create-account-form">
           <h2>EDIT YOUR ACCOUNT</h2>
