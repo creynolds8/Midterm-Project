@@ -12,18 +12,17 @@ body {
   margin-bottom: 5vh;
 }
 
-.categories {
+.category-names {
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 4px solid;
   height: fit-content;
+  background-color: #afd0da;
 }
 
 .categories-header {
   text-align: center;
-  padding: 0.5rem 1rem;
-  border-bottom: 4px solid;
   width: 100%;
 }
 
@@ -35,7 +34,7 @@ body {
 
 .category-name:hover {
   cursor: pointer;
-  text-shadow: 0px 0px 4px azure;
+  text-shadow: 1px 1px 6px black;
 }
 
 .main-accounts {
@@ -68,7 +67,7 @@ article {
   align-items: center;
   height: 2rem;
   padding: 0.25rem 0.5rem;
-  border: none;
+  border: 1px solid;
   border-radius: 0.5rem;
 }
 
@@ -84,6 +83,8 @@ a, u {
 table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #afd0da;
+
 }
 
 tr {
