@@ -42,6 +42,8 @@ INSERT INTO accounts (username, password, website_name, website_url, organizatio
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser3', 'secureprod456', 'SquareSpace', 'https://www.squarespace.com/', 3, 6);
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser3', 'secureprod456', 'Wordpress', 'https://www.wordpress.com/', 4, 6);
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser3', 'secureprod456', 'Weebly', 'https://www.weebly.com/', 5, 6);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser3', 'secureprod456', 'Wordpress', 'https://www.wordpress.com/', 4, 6);
+INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('produser3', 'secureprod456', 'Weebly', 'https://www.weebly.com/', 5, 6);
 
 -- Entertainment
 INSERT INTO accounts (username, password, website_name, website_url, organization_id, category_id) VALUES ('entuser1', 'entpass123', 'Netflix', 'https://www.netflix.com/', 1, 7);
