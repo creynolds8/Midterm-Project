@@ -126,3 +126,14 @@ span.error-message {
   justify-content: center;
   align-items: center;
 }
+
+.outer-password a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.accounts-link {
+  margin: 1rem 1rem 0 1rem;
+}
