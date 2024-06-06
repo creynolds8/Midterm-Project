@@ -24,6 +24,10 @@ router.get('/getcategoryaccounts/:id', (req, res) => {
 });
 
 router.get('/', (req, res) => {
+  if (!req.session.userId) {
+    res.redirect('/');
+    return;
+  }
   const templateVars = {userId: req.session.userId, error: null, orgName: req.session.organizationName, userName: req.session.userName};
   res.render('accounts', templateVars);
 });
@@ -32,6 +36,10 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const accountId = req.params.id;
+  if (!req.session.userId) {
+    res.redirect('/');
+    return;
+  }
   getAccountById(accountId)
     .then((results) => {
       const templateVars = { account: results, userId: req.session.userId, orgName: req.session.organizationName, userName: req.session.userName };

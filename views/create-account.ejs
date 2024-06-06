@@ -25,6 +25,7 @@
       <div class="error-message"> error: message </div>
     </span>
     <div class="outer-div">
+      <div class="outer-password">
       <form id="password-generator">
         <div class="password-selector">
           <label for="length">Select Password Parameters</label>
@@ -63,6 +64,10 @@
           <button type="submit" class="password-create account-button">GENERATE</button>
         </div>
       </form>
+      <a href="/accounts">
+        <button class="accounts-link account-button">Back to all Accounts</button>
+      </a>
+      </div>
       <form action="/createnewaccount" method="POST">
         <div class="create-account-form">
           <h2>CREATE NEW ACCOUNT</h2>
@@ -73,6 +78,14 @@
               </td>
               <td>
                 <input type="text" name="website-input" id="website-input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="websiteUrl-input">Input the Website Url: </label>
+              </td>
+              <td>
+                <input type="text" name="websiteUrl-input" id="websiteUrl-input" />
               </td>
             </tr>
             <tr>

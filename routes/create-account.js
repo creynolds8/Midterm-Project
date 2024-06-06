@@ -5,7 +5,8 @@ const router  = express.Router();
 router.get('/', (req, res) => {
   const userId = req.session.userId;
   if (!userId) {
-    return res.send({ message: "not logged in" });
+    res.redirect('/');
+    return;
   }
   const templateVars = { userId: req.session.userId, error: null, orgName: req.session.organizationName, userName: req.session.userName };
   res.render('create-account', templateVars);
