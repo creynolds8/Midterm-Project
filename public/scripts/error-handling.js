@@ -7,8 +7,10 @@ $(document).ready(function() {
     const website = $('#website-input').val().trim();
     const username = $('#username-input').val().trim();
     const password = $('#password-input').val().trim();
+    const category = document.getElementById("category-selection").value;
 
-    if (website === '' || username === '' || password === '') {
+
+    if (website === '' || username === '' || password === '' || category === 'false') {
       event.preventDefault();
       $('div.error-message').text('Did you forget to type something? Please fill in all fields and try again').slideDown();
       return;
@@ -22,8 +24,9 @@ $(document).ready(function() {
     const website = $('#website-input').val().trim();
     const username = $('#username-input').val().trim();
     const password = $('#password-input').val().trim();
+    const category = document.getElementById("category-selection").value;
 
-    if (website === '' || username === '' || password === '') {
+    if (website === '' || username === '' || password === '' || category === 'false') {
       event.preventDefault();
       $('div.error-message').text('Did you forget to type something? Please fill in all fields and try again').slideDown();
       return;
