@@ -1,8 +1,8 @@
 
 
-$(document).ready(function () {
-  $('#edit-button').click(function (event) {
+$(document).ready(function() {
 
+  $('#edit-button').click(function(event) {
     // Check if fields are empty
     const website = $('#website-input').val().trim();
     const username = $('#username-input').val().trim();
@@ -15,12 +15,10 @@ $(document).ready(function () {
     }
     $('div.error-message').slideUp();
   });
-});
 
-$(document).ready(function () {
-  $('#creatAccount').click(function (event) {
 
-    // Check if fields are empty
+
+  $('.create-account-button').on('click', function(event) {
     const website = $('#website-input').val().trim();
     const username = $('#username-input').val().trim();
     const password = $('#password-input').val().trim();
@@ -32,6 +30,22 @@ $(document).ready(function () {
     }
     $('div.error-message').slideUp();
   });
+
+  $('.password-create').on('click', function(event) {
+    const lowercase = document.getElementById("lower-case").checked;
+    const uppercase = document.getElementById("upper-case").checked;
+    const numbers = document.getElementById("lower-case").checked;
+    const symbols = document.getElementById("lower-case").checked;
+
+    if (!lowercase && !uppercase && !numbers && !symbols) {
+      event.preventDefault();
+      $('div.error-message').text('Please Select at least one box and try and generate your password again').slideDown();
+      return;
+    }
+    $('div.error-message').slideUp();
+  });
+
+
 });
 
 
