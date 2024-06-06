@@ -93,3 +93,16 @@ tr {
 th {
   padding: 0.5rem;
 }
+
+img {
+  display:flex;
+  size:0.5rem;
+  padding-right: 20px;
+}
+
+th.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
