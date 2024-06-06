@@ -31,8 +31,7 @@ nav {
 
 .app-logo {
   margin-right: 1rem;
-  width: 6rem;
-  background-color: azure;
+  width: 7rem;
   border-radius: 3rem;
 }
 
@@ -48,7 +47,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-right: 1rem;
 }
+
 
 .nav-button {
   margin-left: 1rem;
@@ -60,4 +61,5 @@ nav {
 .nav-button:hover {
   box-shadow: 6px 6px 8px;
   cursor: pointer;
+  background-color: #FCD615;
 }

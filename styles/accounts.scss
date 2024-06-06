@@ -1,5 +1,5 @@
 body {
-  background: slategray;
+  background: #f9fbfb;
 }
 
 .outer-div {
@@ -18,7 +18,7 @@ body {
   align-items: center;
   border: 4px solid;
   height: fit-content;
-  background-color: #afd0da;
+  background-color:#f9fbfb;
 }
 
 .categories-header {
@@ -28,8 +28,11 @@ body {
 
 .categories p {
   border-bottom: 4px solid;
-  margin: 1rem;
+  margin: 0.5rem;
   padding-bottom: 0.2rem;
+  background-color: #FCD615;
+  padding: .5rem;
+  border-radius: 8px;
 }
 
 .category-name:hover {
@@ -73,6 +76,7 @@ article {
 
 .account-button:hover {
   box-shadow: 6px 6px 8px;
+  background-color: #FCD615;
   cursor: pointer;
 }
 
@@ -83,7 +87,7 @@ a, u {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #afd0da;
+  background-color: #f9fbfb;
 
 }
 
@@ -95,10 +99,9 @@ th {
   padding: 0.5rem;
 }
 
-img {
-  display:flex;
-  size:0.5rem;
-  padding-right: 20px;
+.web-logo{
+ max-width: 50px;
+ padding-right: .5rem;
 }
 
 th.logo {
@@ -106,4 +109,13 @@ th.logo {
   align-items: center;
   justify-content: flex-start;
   padding: 0.5rem;
+  padding-left: 1.5rem;
+  width: fit-content;
+}
+thead {
+  background-color: #FCD615;
+}
+
+th.website {
+text-align: left;
 }

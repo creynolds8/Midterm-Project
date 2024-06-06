@@ -14,7 +14,7 @@ const createAccountElement = function(account) {
 
     <tr>
     <th class="logo">
-    <img src="https://logo.clearbit.com/${account.website_url}?size=50">
+    <img class="web-logo" src="https://logo.clearbit.com/${account.website_url}?size=50" onerror="this.src='https://github.com/creynolds8/Midterm-Project/blob/feature/new-color/doc/bee_logo_black-removebg-preview.png?raw=true?size=1'">
     <p>${account.website_name}</p>
     </th>
     <th>${account.username}</th>
@@ -26,6 +26,8 @@ const createAccountElement = function(account) {
     `);
   return newAccount;
 };
+
+
 
 const renderAccounts = function (accounts) {
   for (const account of accounts) {

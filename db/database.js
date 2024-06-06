@@ -17,7 +17,7 @@ const getUserName = (userId) => {
 const addAccount = function(account, userId) {
   const queryStr = `INSERT INTO accounts (
     username, password, website_name, website_url, category_id, organization_id)
-    VALUES ($1, $2, $3, $4 $5, (SELECT organization_id
+    VALUES ($1, $2, $3, $4, $5, (SELECT organization_id
       FROM users
       WHERE users.id = $6))
     RETURNING *;
