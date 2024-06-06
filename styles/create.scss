@@ -105,3 +105,20 @@ td {
 #delete-button {
   margin-right: 1rem;
 }
+
+div.error-message {
+  display: none;
+  padding: .3em .6em .1em .6em;
+  margin-left: 2em;
+  border: solid 2px rgb(4, 4, 4);
+  background-color: #f4f1ec;
+  color: #cc0000;
+  font-weight: 500;
+  font-size: large;
+  width: 80%;
+}
+span.error-message {
+  margin-top: 130px;
+  display:flex;
+  justify-content: center;
+  align-items: center;}

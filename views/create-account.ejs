@@ -16,10 +16,14 @@
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/error-handling.js"></script>
   </head>
 
   <header><%- include('partials/_navbar') %></header>
   <body>
+    <span class="error-message">
+      <div class="error-message"> error: message </div>
+    </span>
     <div class="outer-div">
       <form id="password-generator">
         <div class="password-selector">
@@ -118,7 +122,7 @@
               </td>
             </tr>
           </table>
-                <button class="create-account-button account-button">CREATE</button>
+                <button class="create-account-button account-button" id="createAccount">CREATE</button>
         </div>
       </form>
     </div>
