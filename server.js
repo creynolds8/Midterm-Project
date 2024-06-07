@@ -35,10 +35,8 @@ app.use(cookieSession({
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
 const createAccountRoute = require('./routes/create-account');
 const accountsRoute = require('./routes/accounts');
-const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout')
 const { Template } = require('ejs');
@@ -46,10 +44,8 @@ const { Template } = require('ejs');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
 app.use('/createnewaccount', createAccountRoute);
 app.use('/accounts', accountsRoute);
-app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
 // Note: mount other resources here, using the same pattern above
